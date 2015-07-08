@@ -1,0 +1,97 @@
+% Stylesheet solution for a simple Kitware beamer-latex presentation based on the Rochester theme.
+% 
+
+\usetheme{Rochester}
+
+\RequirePackage{pgf}
+
+\pgfdeclareimage[width=1.0\paperwidth]{kitware-header}{kitware-header}
+\pgfdeclareimage[width=1.0\paperwidth,height=1.0\paperheight]{klogo-bg}{klogo-bg}
+\pgfdeclareimage[height=0.2cm]{kitware-logo}{klogo}
+
+\logo{\pgfuseimage{kitware-logo}}
+
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamercovered{transparent}
+
+\beamer@headheight=0.13\paperwidth
+
+% Define Kitware color theme
+\definecolor{kitwaregray}{HTML}{686868}
+\definecolor{kitwarelightgray}{HTML}{EEEEEE}
+\definecolor{kitwareblue}{HTML}{005F9E}
+\definecolor{kitwaregreen}{HTML}{009D49}
+\definecolor{kitwarewhite}{HTML}{FFFFFF}
+
+% Use general theme with kitware blue color
+\usecolortheme[named=kitwareblue]{structure}
+
+% Set colors
+\setbeamercolor*{Title bar}{fg=white,bg=}
+\setbeamercolor*{Location bar}{fg=structure.fg,bg=kitwarelightgray}
+\setbeamercolor*{frametitle}{parent=Title bar}
+\setbeamercolor*{block title}{fg=kitwarelightgray,bg=structure.fg!80}
+\setbeamercolor*{block body}{fg=structure.fg,bg=kitwaregreen!20}
+\setbeamercolor*{block title example}{fg=kitwarelightgray,bg=structure.fg!80}
+\setbeamercolor*{block body example}{fg=structure.fg,bg=kitwaregreen!20}
+\setbeamercolor*{normal text}{bg=white,fg=kitwaregray}
+\setbeamercolor*{section in head/foot}{bg=structure.fg,fg=kitwarelightgray}
+\setbeamercolor*{title}{fg=structure.fg,bg=}
+
+% Set fonts
+\setbeamerfont{section in head/foot}{size=\tiny,series=\normalfont}
+\setbeamerfont{frametitle}{size=\Large}
+
+% Set background color for title page (if title page is page #1)
+\setbeamertemplate{background canvas}{%
+    \ifnum\c@framenumber=1%
+        \centering\includegraphics[width=\paperwidth,height=\paperheight]{klogo-bg.pdf}%
+% 	\centering\pgfuseimage{klogo-bg}%
+    \fi%
+}
+
+% Set blocks settings
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+% Settings for beamer frametitle template
+\setbeamertemplate{frametitle}
+{
+  \vskip-0.25\beamer@headheight
+  \vskip-\baselineskip
+  \vskip-0.3cm
+  \hskip-0.2cm\usebeamerfont*{frametitle}\insertframetitle
+  \vskip-0.2em
+  \hskip0.1cm\usebeamerfont*{framesubtitle}\insertframesubtitle
+}
+
+% Settings for beamer headline template
+\setbeamertemplate{headline}
+{
+  \pgfuseimage{kitware-header}
+  \vskip -1.85cm
+  \linethickness{0.0pt}
+
+  \framelatex{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.3\beamer@headheight]{Title bar}
+    \usebeamerfont{section in head/foot}%
+    \insertsectionnavigationhorizontal{0pt}{\hskip0.22cm}{}%
+  \end{beamercolorbox}}
+
+  \framelatex{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.7\beamer@headheight]{Title bar}
+  \end{beamercolorbox}}
+}
+
+% Settings for beamer footline template
+\setbeamertemplate{footline}
+{
+  \linethickness{0.2pt}
+  \framelatex{
+  \begin{beamercolorbox}[leftskip=.3cm,wd=\paperwidth,ht=0.3\beamer@headheight,sep=0.1cm]{Location bar}
+    \usebeamerfont{section in head/foot}%
+    \insertshortauthor~|~\insertshorttitle
+    \hfill
+    \insertframenumber/\inserttotalframenumber
+  \end{beamercolorbox}}
+}
+
