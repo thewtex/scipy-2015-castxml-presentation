@@ -7,6 +7,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{minted}
+\usepackage[cmtip,all]{xy}
+\newcommand{\longsquiggly}{\xymatrix{{}\ar@{~>}[r]&{}}}
+
 
 \makeatletter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
@@ -179,10 +182,21 @@ McCormick\inst{1}, and Michka Popoff}
     };
   }
   \end{minted}
-  \column{0.1\textwidth}
-  \Large
-  $\longrightarrow$
+  \column{0.2\textwidth}
+\only<2>{
+  \Huge
+  $\mathbf{\longrightarrow}$
   \normalsize
+}
+\only<3->{
+  \Huge
+  $\mathbf{\longsquiggly}$
+  \normalsize
+}
+  \normalsize
+\only<2->{
+Process and parse
+}
   \column{0.3\textwidth}
   \begin{minted}[fontsize=\tiny]{cpp}
 <?xml version="1.0"?>
@@ -205,6 +219,14 @@ McCormick\inst{1}, and Michka Popoff}
   \end{minted}
 \end{columns}
 
+\only<4->{
+  \centerline{\includegraphics[height=4cm]{images/LabyrinthCropped}}
+
+  \tiny
+  Image source:
+  https://en.wikipedia.org/wiki/Labyrinth\_%28film%29#/media/File:Labyrinth\_ver2.jpg
+  \normalsize
+}
 \end{frame}
 
 
