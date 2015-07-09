@@ -6,6 +6,7 @@
 \usepackage[latin9]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{minted}
 
 \makeatletter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
@@ -156,7 +157,56 @@ McCormick\inst{1}, and Michka Popoff}
 \end{enumerate}
 
 
+
 \lyxframeend{}\subsection[C++ AST]{Generating an Abstract Syntax Tree (AST)}
+
+
+\lyxframeend{}\begin{frame}[fragile]{C++ Source Code to Abstract Syntax Tree}
+
+\begin{columns}
+  \column{0.3\textwidth}
+  \begin{minted}[fontsize=\tiny]{cpp}
+  namespace MyCoolProject {
+    struct test_results {
+      enum status {
+        ok,
+        fail,
+        error
+      };
+      void update(
+        const char * test_name,
+        status result );
+    };
+  }
+  \end{minted}
+  \column{0.1\textwidth}
+  \Large
+  $\longrightarrow$
+  \normalsize
+  \column{0.3\textwidth}
+  \begin{minted}[fontsize=\tiny]{cpp}
+<?xml version="1.0"?>
+<GCC_XML version="0.9.0" cvs_revision="1.136">
+  <Namespace id="_5" name="MyCoolProject" context="_1" members="_9"/>
+  <ArrayType id="_8" min="0" max="0" type="_10"/>
+  <Struct id="_9" name="test_results" context="_5" location="f1:2" file="f1" line="2" members="_11 _12 _13 _14 _15 _16" size="8" align="8"/>
+  <Typedef id="_10" name="__va_list_tag" type="_17" context="_1" location="f0:0" file="f0" line="0"/>
+  <Enumeration id="_11" name="status" context="_9" access="public" location="f1:3" file="f1" line="3">
+    <EnumValue name="ok" init="0"/>
+    <EnumValue name="fail" init="1"/>
+    <EnumValue name="error" init="2"/>
+  </Enumeration>
+  <Method id="_12" name="update" returns="_18" context="_9" access="public" location="f1:8" file="f1" line="8" mangled="_ZN13MyCoolProject12test_results6updateEPKcNS0_6statusE">
+    <Argument name="test_name" type="_19" location="f1:9" file="f1" line="9"/>
+    <Argument name="result" type="_11" location="f1:10" file="f1" line="10"/>
+  </Method>
+  ...
+</GCC_XML>
+  \end{minted}
+\end{columns}
+
+\end{frame}
+
 
 \lyxframeend{}\subsection[GCC-XML]{GCC-XML}
 
