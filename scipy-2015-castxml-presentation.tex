@@ -86,7 +86,75 @@ McCormick\inst{1}, and Michka Popoff}
 \lyxframeend{}\section{Motivation and History}
 
 
+
 \lyxframeend{}\subsection[Wrapping ITK]{Wrapping the Insight Toolkit (ITK)}
+
+\lyxframeend{}\lyxframe{The Insight Toolkit (ITK)}
+
+\begin{itemize}
+
+  \item In 1999, the US National Institute of Health's (NIH) National Library
+    of Medicine (NLM) started a project to support the Visible Human Project.
+
+\end{itemize}
+
+\begin{columns}
+  \column{0.5\textwidth}
+  \includegraphics[width=4cm]{images/VisibleHuman}
+  \column{0.5\textwidth}
+  \includegraphics[width=4.7cm]{images/VisibleSlice}
+\end{columns}
+
+
+\lyxframeend{}\lyxframe{Image Segmentation}
+
+\begin{columns}
+  \column{0.5\textwidth}
+  \includegraphics[width=5cm,height=4cm]{images/VentricleSegmentation}
+  \column{0.5\textwidth}
+  \includegraphics[width=5cm,height=4cm]{images/WhiteMatterSegmentation}
+\end{columns}
+
+
+\lyxframeend{}\lyxframe{Image Registration}
+
+\begin{columns}
+  \column{0.5\textwidth}
+  \includegraphics[width=5cm]{images/Registration1}
+  \column{0.5\textwidth}
+  \includegraphics[width=5cm]{images/Registration2}
+\end{columns}
+
+
+\lyxframeend{}\lyxframe{Large C++ Codebase}
+
+\begin{itemize}
+  \item<1-> Development has progressed since 1999
+  \item<2-> Over \alert{1.6 million} lines of code
+  \item<3-> Highly templated C++
+\end{itemize}
+
+\begin{figure}
+  \includegraphics[width=4cm]{images/Modules}
+  \caption{Visualization of the toolkit modules.}
+\end{figure}
+
+
+\lyxframeend{}\lyxframe{We Want to Use Python!}
+
+\centerline{\includegraphics[height=7cm]{images/WrapITK}}
+
+
+\lyxframeend{}\lyxframe{ITK's Wrapping Process}
+
+\begin{enumerate}
+  \item<1-> \alert<5->{Determine an Abstract Syntax Tree (AST)} from C++ sources
+  \item<2-> Create Swig \texttt{.i} from the AST and desired template
+    parameters
+  \item<3-> Generate CPython extension modules code with Swig
+  \item<4-> Build the extension modules
+\end{enumerate}
+
 
 \lyxframeend{}\subsection[C++ AST]{Generating an Abstract Syntax Tree (AST)}
 
