@@ -287,7 +287,7 @@ Process and parse
   Processing
 }
   \begin{itemize}
-    \item<3-> C Preprocessor
+    \item<3-> C preprocessor
     \item<4-> Standard library headers (compiler specific)
     \item<5-> Compiler flags
   \end{itemize}
@@ -318,63 +318,62 @@ Process and parse
 
 
 
+
 \lyxframeend{}\subsection[GCC-XML]{GCC-XML}
 
 
+\lyxframe{GCC-XML}
 
-\lyxframeend{}\lyxframe{Make Titles Informative. Use Uppercase Letters.}
+\includegraphics[height=1.8cm]{images/GccXml.png}
 
-
-\framesubtitle{Frame subtitles are optional. Use upper- or lowercase letters.}
 \begin{itemize}
-\item Use Itemize a lot.
-
-
-\pause{}
-
-\item Use very short sentences or short phrases.
-
-
-\pause{}
-
-\item These overlays are created using the Pause style.
+  \item<2->Does C preprocessing
+  \item<3->Uses standard library headers of the simulated compiler
+  \item<4->Uses compiler flags for simulated compiler
+  \item<5->Uses GCC's C++ parsing capabilities
+  \item<6->Generates XML AST representation
 \end{itemize}
 
-\lyxframeend{}\lyxframe{Make Titles Informative. }
-\begin{itemize}
-\item <1->You can also use overlay specifications to create overlays.
-\item <3->This allows you to present things in any order.
-\item <2->This is shown second.
-\end{itemize}
 
-\lyxframeend{}\lyxframe{Make Titles Informative.}
-\begin{block}
-<1->{}
-\begin{itemize}
-\item Untitled block.
-\item Shown on all slides.
-\end{itemize}
-\end{block}
-\begin{exampleblock}
-<2->{Some Example Block Title}
-\begin{itemize}
-\item $e^{i\pi}=-1$.
-\item $e^{i\pi/2}=i$.
-\end{itemize}
-\end{exampleblock}
+\lyxframeend{}\lyxframe{General Projects That Also Used GCC-XML}
 
 
-\lyxframeend{}\lyxframe{Make Titles Informative. }
-\begin{example}%{}
-<1->On first slide.
-\end{example}%{}
+\begin{columns}
 
-\begin{example}%{}
-<2->On second slide.
-\end{example}%{}
+  \column{0.5\textwidth}
+  \begin{itemize}
+   \item<1->Pyste (Boost.Python)
+   \item<2->Py++ (Boost.Python)
+   \item<3->Python ctypeslib
+   \item<4->xdress
+   \item<5->Others...
+  \end{itemize}
+
+  \column{0.5\textwidth}
+
+  \begin{center}
+  \only<1->{
+\includegraphics[width=4cm]{images/Boost.png}
+}
+  \only<4->{
+\includegraphics[width=2cm]{images/Hoover.png}
+}
+\end{center}
+\end{columns}
+
+
+\lyxframeend{}\lyxframe{GCC-XML's Weakness}
+
+\begin{center}
+\Huge
+\only<2->{Maintainability.}
+\normalsize
+\end{center}
+
 
 \lyxframeend{}\section{CastXML Description}
 
+\lyxframeend{}\lyxframe{CastXML}
 
 \lyxframeend{}\subsection{Building}
 
