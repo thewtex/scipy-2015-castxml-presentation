@@ -233,21 +233,93 @@ Process and parse
 \lyxframeend{}\lyxframe{The C++kie Model}
 
 \begin{columns}
-  \column{0.2\textwidth}
-  \includegraphics[height=4cm]{images/NinjaGingerbread}
-  \column{0.2\textwidth}
-  \includegraphics[height=4cm]{images/Gingerbread}
+  \column{0.25\textwidth}
+\only<1->{
+  C++ Source Code
+  \includegraphics[width=2cm]{images/Ingredients}
+}
+  \column{0.1\textwidth}
+\only<2->{
+  $\mathbf{\longsquiggly}$
+}
+  \column{0.25\textwidth}
+\only<2->{
+  Abstract Syntax Tree
+  \includegraphics[width=2cm]{images/Gingerbread}
+}
+  \column{0.1\textwidth}
+\uncover<3->{
+  $\mathbf{\longrightarrow}$
+}
+  \column{0.25\textwidth}
+\only<3->{
+  Python Wrappers
+  \includegraphics[width=2cm]{images/NinjaGingerbread}
+}
 \end{columns}
 
-\tiny
-Image sources:
+%\tiny
+%Image sources:
 
-https://www.flickr.com/photos/ginnerobot/4516934176
+%https://www.flickr.com/photos/ginnerobot/4516934176
 
-http://yuzumilk.exblog.jp/17080398
-\normalsize
+%http://yuzumilk.exblog.jp/17080398
+
+%https://en.wikipedia.org/wiki/Chocolate\_chip\_cookie\#/media/File:Chocolate\_chip\_cookie\_ingredients.jpg
+
+%\normalsize
+
+
+\lyxframeend{}\lyxframe{AST Generation Complexity}
+
+\begin{columns}
+  \column{0.25\textwidth}
+\only<1->{
+  C++ Source Code
+  \includegraphics[width=2cm]{images/Ingredients}
+}
+  \column{0.05\textwidth}
+\only<2->{
+  $\mathbf{\longrightarrow}$
+}
+  \column{0.35\textwidth}
+\only<2->{
+  Processing
+}
+  \begin{itemize}
+    \item<3-> C Preprocessor
+    \item<4-> Standard library headers (compiler specific)
+    \item<5-> Compiler flags
+  \end{itemize}
+
+\only<2->{
+  \includegraphics[width=3cm]{images/Bake}
+  % image source:https://pixabay.com/p-525226/?no_redirect
+}
+
+  \column{0.05\textwidth}
+\uncover<3->{
+  $\mathbf{\longrightarrow}$
+}
+  \column{0.25\textwidth}
+\only<6->{
+  Abstract Syntax Tree
+  \includegraphics[width=3cm]{images/DavidsGingerbread}
+  % Image source:
+  % http://i431.photobucket.com/albums/qq32/ali991/Gingerbread_zps82331c17.jpg
+}
+\end{columns}
+
+\only<6->{
+  \centerline{\includegraphics[width=5cm]{images/Bowie}}
+  %image source:
+%http://s3.amazonaws.com/quietus_production/images/articles/1850/bowie_labyrinth_1245071926.jpg
+}
+
+
 
 \lyxframeend{}\subsection[GCC-XML]{GCC-XML}
+
 
 
 \lyxframeend{}\lyxframe{Make Titles Informative. Use Uppercase Letters.}
