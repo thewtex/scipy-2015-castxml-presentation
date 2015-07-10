@@ -375,37 +375,65 @@ Process and parse
 
 \lyxframeend{}\lyxframe{CastXML}
 
+CastXML is a GCC-XML replacement that uses LLVM/Clang.
+
+\begin{block}{CastXML}
+A \textbf{C}-family \textbf{a}bstract \textbf{s}yntax
+\textbf{t}ree \textbf{XML} output tool.
+\end{block}
+
+
 \lyxframeend{}\subsection{Building}
 
+\lyxframeend{}\lyxframe{CastXML}
 
-\lyxframeend{}\lyxframe{Make Titles Informative. }
-\begin{theorem}%{}
-On first slide.
-\end{theorem}%{}
+Building requires
 
-\pause{}
-\begin{corollary}%{}
-On second slide.
-\end{corollary}%{}
+\begin{itemize}
+  \item<1-> A C++ compiler with C++11 support
+  \item<2-> CMake
+  \item<3-> LLVM/Clang 3.6.0 or later. Currently must be
+    \begin{itemize}
+      \item Built from source
+      \item Installed into an install prefix
+    \end{itemize}
+\end{itemize}
 
-\lyxframeend{}\lyxframe{Make Titles Informative. }
-\begin{topcolumns}%{}
+\begin{columns}
+
+  \column{0.5\textwidth}
+
+  \begin{center}
+  \only<2->{
+\includegraphics[width=4cm]{images/CMake.png}
+}
+\end{center}
+  \column{0.5\textwidth}
+
+  \begin{center}
+  \only<3->{
+\includegraphics[width=4cm]{images/Clang.png}
+}
+\end{center}
+\end{columns}
 
 
-\column{5cm}
-\begin{theorem}%{}
-<1->In left column.
-\end{theorem}%{}
 
-\column{5cm}
-\begin{corollary}%{}
-<2->In right column.\\
-New line
-\end{corollary}%{}
-\end{topcolumns}%{}
+
+
+\lyxframeend{}\lyxframe{Invocation}
 
 \lyxframeend{}\subsection{Invocation}
 
+\begin{block}{Invocation}
+  \begin{verbatim}
+castxml \
+  --castxml-gccxml \
+  --castxml-cc-msvc cl \
+  -o ouput.xml
+  input.cxx
+  \end{verbatim}
+\end{block}
 
 \lyxframeend{}\section{SciPy Ecosystem Integration}
 
@@ -417,6 +445,7 @@ New line
 
 
 \lyxframeend{}\lyxframe{Summary}
+
 \begin{itemize}
 \item The \textcolor{red}{first main message} of your talk in one or two
 lines.
@@ -426,7 +455,6 @@ lines.
 \end{itemize}
 
 
-\vskip0pt plus.5fill
 \begin{itemize}
 \item Outlook
 
@@ -438,25 +466,24 @@ lines.
 
 \lyxframeend{}
 
-\appendix
-
 \lyxframeend{}\section*{Appendix}
 
 
-\lyxframeend{}\subsection*{For Further Reading}
+\lyxframeend{}\subsection*{Resources}
 
 
-\lyxframeend{}\lyxframe{[allowframebreaks]For Further Reading}
+\lyxframeend{}\lyxframe{[allowframebreaks]Resources}
+
+\begin{center}
+\small
+\begin{description}
+  \item[Mailing list] \hfill \\ \url{http://public.kitware.com/mailman/listinfo/castxml}
+  \item[Repository] \hfill \\ \url{https://github.com/CastXML/CastXML}
+\end{description}
+\normalsize
+\end{center}
 
 \beamertemplatebookbibitems
-\begin{thebibliography}{1}
-\bibitem{Author1990}A. Author. \newblock\emph{Handbook of Everything}.\newblock
-Some Press, 1990.\beamertemplatearticlebibitems
-
-\bibitem{Someone2002}S. Someone.\newblock On this and that\emph{.}
-\newblock\emph{Journal on This and That}. 2(1):50--100, 2000.
-
-\end{thebibliography}
 
 \lyxframeend{}
 \end{document}
