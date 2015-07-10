@@ -440,6 +440,39 @@ castxml \
 
 \lyxframeend{}\subsection{pygccxml}
 
+\lyxframeend{}\lyxframe{pygccxml}
+
+\begin{block}{pygccxml}
+A specialized XML reader that reads the output from CastXML and GCC-XML. It
+provides a simple framework to navigate C++ declarations using Python classes.
+\end{block}
+
+Repository: \url{https://github.com/gccxml/pygccxml}
+
+
+\lyxframeend{}\lyxframe{pygccxml History}
+
+\begin{itemize}
+  \item<1-> The original author is Roman Yakovenko (2004-2011).
+  \item<2-> Forked multiple times by different authors to add Python 3
+    support.
+  \item<3-> In May 2014, Michka Popoff and the Insight Software Consortium
+    revived pygccxml.
+\end{itemize}
+
+
+\lyxframeend{}\lyxframe{New since 2014}
+
+\begin{itemize}
+  \item Mercurial to Git
+  \item Travis-ci.org hook for Python 2.6, 2.7, 3.2, 3.3, 3.4
+    support.
+  \item coverall.io hook for code coverage
+  \item Docs on readthedocs.org
+  \item quantifiedcode.com hook for code structure
+  \item PEP8 compatible
+\end{itemize}
+
 
 \lyxframeend{}\section*{Summary}
 
@@ -447,22 +480,15 @@ castxml \
 \lyxframeend{}\lyxframe{Summary}
 
 \begin{itemize}
-\item The \textcolor{red}{first main message} of your talk in one or two
+  \item Generating an \alert{Abstract Syntax Tree} is an important part of the wrapping
+  process.
+  \item The Abstract Syntax Tree is \alert{compiler-dependent} because of the C
+    preprocessor, standard library headers, and 
 lines.
-\item The \textcolor{red}{second main message} of your talk in one or two
-lines.
-\item Perhaps a \textcolor{red}{third message}, but not more than that.
+\item \alert{CastXML} captures the compiler-dependence and does complex parsing of C++.
+\item \alert{pygccxml} is a Python interface to CastXML output
 \end{itemize}
 
-
-\begin{itemize}
-\item Outlook
-
-\begin{itemize}
-\item What we have not done yet.
-\item Even more stuff.
-\end{itemize}
-\end{itemize}
 
 \lyxframeend{}
 
