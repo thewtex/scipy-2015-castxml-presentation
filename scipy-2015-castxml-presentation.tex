@@ -474,7 +474,60 @@ Repository: \url{https://github.com/gccxml/pygccxml}
 \end{itemize}
 
 
-\lyxframeend{}\section*{Summary}
+\lyxframeend{}\begin{frame}[fragile]{pygccxml: API example}
+
+\begin{columns}
+  \column{0.3\textwidth}
+  Input
+  \begin{minted}[fontsize=\tiny]{cpp}
+  namespace MyCoolProject {
+    struct test_results {
+      enum status {
+        ok,
+        fail,
+        error
+      };
+      void update(
+        const char * test_name,
+        status result );
+    };
+  }
+  \end{minted}
+
+  \column{0.7\textwidth}
+  Python
+  \begin{minted}[fontsize=\tiny]{python}
+from pygccxml import parser
+from pygccxml import declarations
+# Snip --//-- Setup config object for castxml or gccxml
+decls = parser.parse(["test.cpp"], config)
+global_ns = declarations.get_global_namespace(decls)
+project_ns = global_ns.namespace("MyCoolProject")
+update_functions = project_ns.member_functions("update")
+# There could be multiple functions with the same name (in c++)
+for function in update_functions:
+    print("Name: " + function.name)
+    print("Return type: " + str(function.return_type))
+    for i, arg in enumerate(function.arguments):
+        print("Argument " + str(i) + ": " + str(arg))
+  \end{minted}
+\end{columns}
+
+Output
+\begin{center}
+  \begin{minted}[fontsize=\tiny]{yaml}
+Name: update
+Return type: void
+Argument 0: char const * test_name
+Argument 1: MyCoolProject::test_results::status result
+  \end{minted}
+\end{center}
+
+\end{frame}
+
+
+
+\section*{Summary}
 
 
 \lyxframeend{}\lyxframe{Summary}
